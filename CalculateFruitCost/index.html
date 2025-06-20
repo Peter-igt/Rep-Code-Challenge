@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fruit Cost</title>
+    <style>body{text-align:center;margin:20px;}</style>
+</head>
+<body>
+    <button onclick="calculate()">Calculate</button>
+    <div id="out"></div>
+    <script>
+        function calculate() {
+            let n = Number(prompt("Matunda ngapi? (KES 20)"));
+            if (isNaN(n) || n < 0) { document.getElementById('out').innerHTML = "Invalid"; return; }
+            let c = n * 20, d = n >= 5 ? c * 0.1 : 0;
+            document.getElementById('out').innerHTML = `Fruits: ${n}<br>Base: KES ${c}<br>${n >= 5 ? `Discount: KES ${d}<br>` : ""}Total: KES ${c - d}`;
+        }
+    </script>
+</body>
+</html>
